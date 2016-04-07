@@ -18,12 +18,6 @@ datepickerApp.controller('DatepickerController', ['$scope', function($scope){
   $scope.selected_class = "selected";
   $scope.hover_selected_class = "hover-selected";
 
-  // $scope.today = {
-  //   day: now.getDay(),
-  //   month: now.getMonth(),
-  //   year: now.getYear()
-  // };
-
   $scope.selected = {
     day: current.day,
     month: current.month,
