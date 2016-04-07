@@ -10,8 +10,12 @@ http.createServer( function (request, response) {
          console.log(err);
          response.writeHead(404, {'Content-Type': 'text/html'});
       }else{
-         response.writeHead(200, {'Content-Type': 'text/html'});
-         response.write(data.toString());
+        if(pathname.search('.css') !== -1) {
+          response.writeHead(200, {'Content-Type': 'text/css'});
+        } else {
+          response.writeHead(200, {'Content-Type': 'text/html'});
+        }
+        response.write(data.toString());
       }
       response.end();
    });
