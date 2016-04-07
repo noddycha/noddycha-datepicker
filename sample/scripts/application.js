@@ -17,7 +17,7 @@ datepickerApp.directive('datepicker', function()
         link: function(scope, element, attrs)
         {
             element.bind('focus', function(){
-              console.log("Event Attached");
+              console.log("Event Triggered");
             });
         }
     }

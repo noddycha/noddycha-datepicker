@@ -1,5 +1,0 @@
-7 Apr 06:15:27 - [33m[nodemon] v1.2.1[39m
-7 Apr 06:15:27 - [33m[nodemon] to restart at any time, enter `rs`[39m
-7 Apr 06:15:27 - [33m[nodemon] watching: *.*[39m
-7 Apr 06:15:27 - [32m[nodemon] starting `node server.js`[39m
-Server running at http://127.0.0.1:8081/
