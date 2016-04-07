@@ -30,7 +30,7 @@ html, body {
   cursor: pointer;
 }
 
-.dp-day:hover {
+.dp-day:hover, .dp-day.hover-selected {
   background-color: #ACACAC;
 }
 

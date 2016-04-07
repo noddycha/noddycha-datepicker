@@ -16,6 +16,7 @@ datepickerApp.controller('DatepickerController', ['$scope', function($scope){
   $scope.days = angular.utils.getDays(current.month, current.year);
 
   $scope.selected_class = "selected";
+  $scope.hover_selected_class = "hover-selected";
 
   // $scope.today = {
   //   day: now.getDay(),
@@ -29,8 +30,44 @@ datepickerApp.controller('DatepickerController', ['$scope', function($scope){
     year: current.year
   };
 
+  $scope.hover_selected = {
+    day: current.day,
+    month: current.month,
+    year: current.year
+  };
+
   $scope.selectDate = function(day) {
     $scope.selected.day = day;
+
+    $scope.updateDate();
   };
+
+  $scope.updateDate = function(){
+    $scope.datepicker = $scope.selected.day+"/"+$scope.selected.month+"/"+$scope.selected.year;
+  };
+
+  $scope.hoverSelect = function(day){
+    $scope.hover_selected.day = day;
+  };
+
+  $scope.hoverPrev = function() {
+    if($scope.hover_selected.day > 1) {
+      $scope.hover_selected.day = $scope.hover_selected.day - 1;
+    }
+  }
+
+  $scope.hoverNext = function() {
+    if($scope.hover_selected.day < angular.utils.getDays($scope.selected.month, $scope.selected.year).length) {
+      $scope.hover_selected.day = $scope.hover_selected.day + 1;
+    }
+  }
+
+  $scope.selectHovered = function() {
+    $scope.selected.day = $scope.hover_selected.day;
+
+    $scope.updateDate();
+  }
+
+  $scope.updateDate();
 
 }]);
