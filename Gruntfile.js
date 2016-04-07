@@ -24,10 +24,11 @@ module.exports = function(grunt) {
       },
       datepicker_lib: {
         src: ['scripts/utils.js',
-                  'scripts/app.js',
-                  'scripts/directives/*.js',
-                  'scripts/services/*.js',
-                  'scripts/controllers/*.js'],
+              'scripts/config.js',
+              'scripts/app.js',
+              'scripts/directives/datepicker.js'],
+              // 'scripts/services/*.js',
+              // 'scripts/controllers/*.js'],
             dest: 'sample/scripts/application.js',
         nonull: true
       }
