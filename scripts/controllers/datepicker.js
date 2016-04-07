@@ -36,6 +36,10 @@ datepickerApp.controller('DatepickerController', ['$scope', function($scope){
     year: current.year
   };
 
+  $scope.updateDays = function() {
+    $scope.days = angular.utils.getDays($scope.selected.month, $scope.selected.year);
+  }
+
   $scope.selectDate = function(day) {
     $scope.selected.day = day;
 

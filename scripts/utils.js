@@ -26,9 +26,9 @@ angular.utils = function() {
     var days = [];
     if(month == 2) {
       if(year % 4 == 0) {
-        for(var i=0; i<28; i++) { days.push(i+1); }
+        for(var i=0; i<29; i++) { days.push(i+1); }
       } else {
-        for(var i=0; i<27; i++) { days.push(i+1); }
+        for(var i=0; i<28; i++) { days.push(i+1); }
       }
     } else if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
       for(var i=0; i<31; i++) { days.push(i+1); }
