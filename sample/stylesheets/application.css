@@ -1,0 +1,9 @@
+html, body {
+  margin: 10px;
+}
+
+.dp-container {
+  width: 200px;
+  height: 200px;
+  background: #E6E6E6;
+}

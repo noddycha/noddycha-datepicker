@@ -16,8 +16,20 @@ datepickerApp.directive('datepicker', function()
         restrict: 'A',
         link: function(scope, element, attrs)
         {
-            element.bind('focus', function(){
-              console.log("Event Triggered");
+            element.bind('focus', function(event){
+              if(document.querySelector('.dp-container')) {
+                return;
+              }
+              var $input = element[0];
+              $input.onclick = function(evt) {
+                evt.stopPropagation();
+              };
+              var input_dim = element[0].getBoundingClientRect();
+              angular.element(document.body).append('<div class="dp-container" onclick="event.stopPropagation()" style="left:'+input_dim.left+'; top:'+(input_dim.top+10)+'"> </div>');
+            });
+
+            angular.element(document.body).bind('click', function(event){
+              angular.element(document.querySelector('.dp-container')).remove();
             });
         }
     }
